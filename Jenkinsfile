@@ -2,14 +2,6 @@ pipeline {
     agent {
         label 'any'
     }
-    options{
-        timeout(time: 30, unit: 'MINUTES')
-        disableConcurrentBuilds()
-        ansiColor('xterm')
-    }
-    // environment {
-    //     DEBUG = 'true'
-    // }
 
     parameters {
         choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Select Action')
