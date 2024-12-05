@@ -1,18 +1,5 @@
 pipeline {
-    agent none
-    
-    options{
-        timeout(time: 30, unit: 'MINUTES')
-        disableConcurrentBuilds()
-        ansiColor('xterm')
-    }
-    // environment {
-    //     DEBUG = 'true'
-    // }
-
-    parameters {
-        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Select Action')
-    }
+   
     stages {
         stage('Init and Plan') {
             steps {
